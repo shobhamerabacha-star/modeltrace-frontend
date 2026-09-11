@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { ExpectedPages } from "@/components/expected-pages";
+import { t } from "@/lib/i18n";
 
 export default function HomePage() {
   return (
@@ -9,47 +10,45 @@ export default function HomePage() {
         <div className="landing-orbs" aria-hidden />
         <div className="landing-hero-inner">
           <BrandLogo className="landing-logo" aria-label="ModelTrace logo" />
-          <span className="tag">Stellar · Soroban · AI governance</span>
-          <h1 className="hero-headline">Prove every inference.</h1>
+          <span className="tag">{t("common.tagline")}</span>
+          <h1 className="hero-headline">{t("home.headline")}</h1>
           <p className="landing-lead">
-            ModelTrace turns AI usage into <strong>attested facts on-chain</strong>:
-            {" "}which model ran, under which policy, and what it costs{"\u2014"}so
-            procurement, finance, and auditors share one neutral layer.
+            {t("home.lead")}
           </p>
           <div className="landing-cta-row">
-            <Link href="/roadmap" className="cta">Ship the roadmap</Link>
-            <Link href="/contracts" className="cta-secondary">Read the contracts story</Link>
+            <Link href="/roadmap" className="cta">{t("home.ctaRoadmap")}</Link>
+            <Link href="/contracts" className="cta-secondary">{t("home.ctaContracts")}</Link>
           </div>
           <ul className="landing-stats">
-            <li>Metered settlement</li>
-            <li>Dispute-ready escrow</li>
-            <li>Export-grade audit trails</li>
+            <li>{t("home.stats.metered")}</li>
+            <li>{t("home.stats.escrow")}</li>
+            <li>{t("home.stats.audit")}</li>
           </ul>
         </div>
       </section>
 
       <section className="landing-pillars" aria-labelledby="pillars-heading">
         <h2 className="visually-hidden" id="pillars-heading">
-          What ModelTrace provides
+          {t("home.pillarsHeading")}
         </h2>
         <article className="landing-pillar">
           <div className="landing-pillar-icon" aria-hidden>◆</div>
-          <h3>Attestation rail</h3>
-          <p>Signed inference events tied to tiers—your billing disputes shrink.</p>
+          <h3>{t("home.pillars.attestationTitle")}</h3>
+          <p>{t("home.pillars.attestationDesc")}</p>
         </article>
         <article className="landing-pillar">
           <div className="landing-pillar-icon" aria-hidden>◇</div>
-          <h3>Settlement logic</h3>
-          <p>Soroban payment-router patterns built for fast finality on Stellar.</p>
+          <h3>{t("home.pillars.settlementTitle")}</h3>
+          <p>{t("home.pillars.settlementDesc")}</p>
         </article>
         <article className="landing-pillar">
           <div className="landing-pillar-icon" aria-hidden>○</div>
-          <h3>Operator-ready UX</h3>
-          <p>Roadmap toward dashboards gateways and enterprises actually adopt.</p>
+          <h3>{t("home.pillars.uxTitle")}</h3>
+          <p>{t("home.pillars.uxDesc")}</p>
         </article>
       </section>
 
-      <p className="landing-trust">Built for teams who sell or buy inference at scale—and cannot afford black-box invoices.</p>
+      <p className="landing-trust">{t("home.trustStatement")}</p>
 
       <ExpectedPages />
     </>
