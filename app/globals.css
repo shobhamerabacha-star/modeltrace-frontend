@@ -865,3 +865,59 @@ button.wallet-pill {
 .preview-badge span {
   color: var(--muted);
 }
+
+/* === Internationalization & Length Resilience (Issue #80) ================
+ * Avoids layouts breaking when translated strings grow 30-50% longer
+ * (e.g. German, Finnish) and establishes bidirectional (RTL) foundations.
+ * ==================================================================== */
+:root {
+  overflow-wrap: break-word;
+}
+
+/* Length-proofing: Ensure buttons, pills, and links wrap cleanly */
+.cta,
+.cta-secondary,
+.landing-stats li,
+.button {
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+  word-break: normal;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Card content resilience */
+.card,
+.landing-pillar,
+.site-map table {
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+/* Table container horizontal scrolling on narrow viewports */
+.site-map table th,
+.site-map table td {
+  white-space: normal;
+  min-width: 80px;
+}
+
+/* Bidirectional / RTL Readiness */
+[dir="rtl"] {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .skip-link {
+  left: auto;
+  right: 12px;
+}
+
+[dir="rtl"] .landing-hero-inner {
+  text-align: right;
+}
+
+[dir="rtl"] .quickstart-steps {
+  padding-left: 0;
+  padding-right: 20px;
+}

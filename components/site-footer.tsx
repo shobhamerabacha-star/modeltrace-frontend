@@ -8,17 +8,18 @@
  */
 
 import { RepositoryLink } from "@/components/analytics/tracked-links";
+import { t } from "@/lib/i18n";
 
 export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="container site-footer-inner">
-        <span>ModelTrace — verifiable AI inference accounting on Stellar.</span>
+        <span>{t("common.footerText")}</span>
         <RepositoryLink
           href="https://github.com/FinesseStudioLab/modeltrace-frontend"
           className="site-footer-link"
         >
-          View source on GitHub
+          {t("common.viewSource")}
         </RepositoryLink>
       </div>
     </footer>
