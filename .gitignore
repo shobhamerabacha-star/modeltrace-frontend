@@ -1,8 +1,6 @@
 node_modules/
 .next/
 out/
-.env
-.env.local
 *.log
 .DS_Store
 *.tsbuildinfo
@@ -12,3 +10,4 @@ out/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+config.bat
